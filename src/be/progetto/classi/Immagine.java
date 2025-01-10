@@ -12,18 +12,24 @@ public class Immagine extends ElementoMultimediale implements Luminosità {
     }
     @Override
     public void aumentaLuminosita(int num) {
-        luminosità += num;
+        if(num > 0) {
+            luminosità += num;
+        }
 
     }
 
     @Override
     public void diminuisciLuminosita(int num) {
-        if(num <= luminosità) {
+        if(num >0 && num <= luminosità) {
             luminosità -= num;
         }
     }
 
     public void show() {
-
+        String luminositaPrint = "";
+        for(int i = 0; i < luminosità; i++) {
+            luminositaPrint += "*";
+        }
+        System.out.println(titolo + "Luminosità:" + luminositaPrint);
     }
 }

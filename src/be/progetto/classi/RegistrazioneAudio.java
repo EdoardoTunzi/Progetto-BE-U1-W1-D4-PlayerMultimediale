@@ -14,17 +14,25 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     }
 
     @Override
-    public void alzaVolume() {
-
+    public void alzaVolume(int num) {
+        if(num > 0) {
+            volume += num;
+        }
     }
 
     @Override
-    public void abbassaVolume() {
-
+    public void abbassaVolume(int num) {
+        if(num >0 && num <= volume) {
+            volume -= num;
+        }
     }
 
     @Override
     public void play() {
-
+        String printVolume = "";
+        for(int i = 0; i < volume; i++) {
+            printVolume += "*";
+        }
+        System.out.println(titolo + "Volume:" + printVolume);
     }
 }

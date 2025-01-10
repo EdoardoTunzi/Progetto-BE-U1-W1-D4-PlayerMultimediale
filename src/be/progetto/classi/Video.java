@@ -6,6 +6,7 @@ import be.progetto.interfacce.Riproducibile;
 public class Video extends ElementoMultimediale implements Riproducibile, Luminosità {
     int volume;
     int durata;
+    int luminosità;
 
     public Video(String titolo, int volume, int durata) {
         super(titolo);
@@ -14,23 +15,32 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
     }
 
     @Override
-    public void alzaVolume() {
-
+    public void alzaVolume(int num) {
+        if(num > 0) {
+            volume += num;
+        }
     }
 
     @Override
-    public void abbassaVolume() {
-
+    public void abbassaVolume(int num) {
+        if(num >0 && num <= volume) {
+            volume -= num;
+        }
     }
 
     @Override
     public void aumentaLuminosita(int num) {
+        if(num > 0) {
+            luminosità += num;
+        }
 
     }
 
     @Override
     public void diminuisciLuminosita(int num) {
-
+        if(num >0 && num <= luminosità) {
+            luminosità -= num;
+        }
     }
 
     @Override

@@ -1,9 +1,10 @@
 package be.progetto.classi;
 
 public abstract class ElementoMultimediale {
-    String titolo;
+    public String titolo;
 
 
     public ElementoMultimediale(String titolo) {
+        this.titolo = titolo;
     }
 }

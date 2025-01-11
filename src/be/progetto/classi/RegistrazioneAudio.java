@@ -18,6 +18,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         if(num > 0) {
             volume += num;
         }
+        System.out.println("Volume: +" + num + " Volume di " + titolo +" = " + volume);
     }
 
     @Override
@@ -25,14 +26,19 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         if(num >0 && num <= volume) {
             volume -= num;
         }
+        System.out.println("Volume: -" + num + " Volume di " + titolo +" = " + volume);
     }
 
     @Override
     public void play() {
         String printVolume = "";
         for(int i = 0; i < volume; i++) {
-            printVolume += "*";
+            printVolume += "! ";
         }
-        System.out.println(titolo + "Volume:" + printVolume);
+
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo + "Volume:" + printVolume);
+        }
+
     }
 }

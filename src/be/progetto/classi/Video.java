@@ -19,6 +19,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
         if(num > 0) {
             volume += num;
         }
+        System.out.println("Volume: +" + num + " Volume di " + titolo +" = " + volume);
     }
 
     @Override
@@ -26,6 +27,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
         if(num >0 && num <= volume) {
             volume -= num;
         }
+        System.out.println("Volume: -" + num + " Volume di " + titolo +" = " + volume);
     }
 
     @Override
@@ -33,6 +35,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
         if(num > 0) {
             luminosità += num;
         }
+        System.out.println("Luminosità di " + titolo + " aumentata di: " + num);
 
     }
 
@@ -41,10 +44,22 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
         if(num >0 && num <= luminosità) {
             luminosità -= num;
         }
+        System.out.println("Luminosità di " + titolo + " ridotta di: " + num);
     }
 
     @Override
     public void play() {
+        String printVolume = "";
+        for(int i = 0; i < volume; i++) {
+            printVolume += "! ";
+        }
+        String printLum = "";
+        for(int i = 0; i < luminosità; i++) {
+            printLum += "* ";
+        }
 
+        for (int i = 0; i < durata; i++) {
+            System.out.println(titolo + "Volume:" + printVolume + "Luminosità: " + printLum);
+        }
     }
 }

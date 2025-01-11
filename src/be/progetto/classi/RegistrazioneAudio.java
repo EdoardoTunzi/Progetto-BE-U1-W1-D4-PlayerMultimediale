@@ -37,7 +37,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
         }
 
         for (int i = 0; i < durata; i++) {
-            System.out.println(titolo + "Volume:" + printVolume);
+            System.out.println(titolo + " Volume:" + printVolume);
         }
 
     }
